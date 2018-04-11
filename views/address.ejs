@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title></title>
+</head>
+<body style="background-image: url(images/maxresdefault.jpg);">
+
+	<div class="row" style="height: 50px;">	
+<h1 style="text-align: center ;font-family: 'Lato', sans-serif; ">Address Book</h1></div><br><br>
+<div class="row" style="height: 25px">
+	<div class="col-md-9"  style="height: 25px"></div>
+	<div class="col-md-3">
+	<button type = "button" class = "btn btn-success"><a href="/addcontact">Add Contact</a></button>&nbsp;&nbsp;
+<button type = "button" class = "btn btn-default">Mail</button>
+</div></div><br><br>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-2"><h2 style="font-family: 'Lato', sans-serif;">Contacts</h2></div>
+	<div class="col-md-7"></div>
+</div>
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-4" style="color: black;">
+<% for(var i=0; i < result8.length; i++) { %>
+     <div class="container">
+       
+       <h5 data-toggle="modal" data-target="#myModal">Email:<%= result8[i].Email %> </h5>
+            
+         
+           <div class="modal fade" id="myModal" role="dialog">
+             <div class="modal-dialog">
+    
+                 <div class="modal-content">
+
+                   <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal"></button>
+                           <h4 class="modal-title"><%= result8[i].Fname %></h4>
+                    </div>
+                    <div class="modal-body">
+                       <h4>Lastname:</h4><h5><%= result8[i].Lname %></h5>
+                       <h4>PhoneNumber:</h4><h5><%= result8[i].Phone %></h5>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+      
+              </div>
+            </div>
+  
+       </div>
+<% } %>
+</div>
+<div class="col-md-4" style="color: black;">
+<% for(var i=0; i < result8.length; i++) { %>
+     <div class="container">
+       <h5 data-toggle="modal" data-target="#myModal">Name:<%= result8[i].Fname %> </h5>
+            
+         
+           <div class="modal fade" id="myModal" role="dialog">
+             <div class="modal-dialog">
+    
+                 <div class="modal-content">
+
+                   <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal"></button>
+                           <h4 class="modal-title"><%= result8[i].Fname %></h4>
+                    </div>
+                    <div class="modal-body">
+                       <h4>Lastname:</h4><h5><%= result8[i].Lname %></h5>
+                       <h4>PhoneNumber:</h4><h5><%= result8[i].Phone %></h5>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+      
+              </div>
+            </div>
+  
+       </div>
+<% } %></div>
+
+
+
+<div class="col-md-2"></div>
+</div>
+
+
+</body>
+</html>

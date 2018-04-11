@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="1.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title></title>
+</head>
+<body id="a1">
+  
+	<div class="row" style="height: 50px;">	
+<h1 style="text-align: center ;font-family: 'Lato', sans-serif; ">Address Book</h1></div><br><br>
+<div class="row" style="height: 25px">
+	<div class="col-md-9"  style="height: 25px"></div>
+	<div class="col-md-3">
+    <button type = "button" class = "btn btn-default"><a href="/Profile">Profile</a></button>
+	  <button type = "button" class = "btn btn-default"><a href="/addcontact">Add Contact</a></button>&nbsp;&nbsp;
+    <button type = "button" class = "btn btn-default"><a href="/">Logout</a></button>
+
+</div></div><br><br>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-2"><h2 style="font-family: 'Lato', sans-serif;">Contacts</h2></div>
+	<div class="col-md-7"></div>
+</div>
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-4" style="color: black;">
+<% for(var i=0; i < result18.length; i++) { %>
+     <div class="container">
+       
+       <h5 data-toggle="modal" data-target="#myModal">Email:<%= result18[i].adEmail %> </h5>
+
+  
+       </div>
+<% } %>
+</div>
+<div class="col-md-4" style="color: black;">
+<% for(var i=0; i < result18.length; i++) { %>
+     <div class="container">
+       <h5 data-toggle="modal" data-target="#myModal">Name:<%= result18[i].adFname %> </h5>
+           </div>
+<% } %></div>
+<div class="col-md-2" style="color: black;">
+<% for(var i=0; i < result18.length; i++) { %>
+     <div class="container">
+      <form>
+       <button type = "submit" class = "btn btn-default" formaction="/addres/<%= result18[i].adFname %>" >view</button>
+
+       <button type = "submit" class = "btn btn-default" formaction="/update/<%= result18[i].adFname %>" >update</button>
+
+       <button type = "submit" class = "btn btn-default" formaction="/delete/<%= result18[i].adFname %>" >delete</button>
+       </form>
+           </div>
+<% } %></div>
+
+
+
+
+</div>
+
+
+</body>
+</html>
